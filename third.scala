@@ -4,7 +4,7 @@ object first_question extends App{
         val acnumber:Int=n
         var balance:Double=b
 
-        override def toString="\nAccount deatil\n"+"NIC :"+nic+"\n"+"Account no. :"+acnumber+"\n"+"Balance :"+balance
+        override def toString="\nAccount deatil\n"+"NIC :"+nic+"\n"+"Account no. :"+acnumber+"\n"+"Balance :"+balance 
         def transfer(amount:Double,that:Account):Account={
             if (this.balance-amount < 0) {
                 print("No enough money to transfer")

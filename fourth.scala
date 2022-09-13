@@ -5,7 +5,7 @@ object first_question extends App{
         val acnumber:Int=n
         var balance:Double=b
 
-        override def toString="Account deatils\n"+"NIC :"+nic+"\n"+"Account no. :"+acnumber+"\n"+"Balance :"+balance
+        override def toString="<NIC :"+nic+"  "+"Account no. :"+acnumber+"  "+"Balance :"+balance+">\n"
         def transfer(amount:Double,that:Account):Account={
             if (this.balance-amount < 0) {
                 print("No enough money to transfer")
@@ -38,14 +38,14 @@ object first_question extends App{
         case _ =>new Account(acc.nic,acc.acnumber,acc.balance * 1.1)
     }
     
-     def finalSum=(l:List[Account])=>l.map(calcInterest(_)).map((x)=>x.balance).reduce((x,y)=>x+y)
+     def finalBal=(l:List[Account])=>l.map(calcInterest(_))
 
      
     //function calls
     val accList=List(new Account("2323",343,-100),new Account("4343",344,-100),new Account("5454",345,190))
-  
-    println("Negative balance accounts :"+findNeg(accList).map((x)=>x.acnumber))
-    println("Total of all account balances :"+findSum(accList))
-    print("Total of all accounts after adding interest :")
-    println("%.2f".format(finalSum(accList)))
+    println("Bank Accounts :"+accList+"\n")
+    println("Negative balance accounts :"+findNeg(accList).map((x)=>x.acnumber)+"\n")
+    println("Total of all account balances :"+findSum(accList)+"\n")
+    println("Account balances after adding interest :"+finalBal(accList)+"\n")
+    
 }
