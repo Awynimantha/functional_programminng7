@@ -21,7 +21,7 @@ object first_question extends App{
   val ac1=new Account("12",234,123.4)
   var ac2=new Account("13",343,0)
  ac2=ac1.transfer(100.2,ac2)
-  println(ac2)
   println(ac1)
+  println(ac2)
 
 }
